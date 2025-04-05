@@ -1,4 +1,104 @@
 ---
-layout: home
-author_profile: true
+layout: splash
+classes: wide
+title: "MIAA LAB"
+excerpt: |
+  **Machine Intelligence & Advanced Adaptation Laboratory**  
+  An AI lab in the Shien-Ming Wu School of Intelligent Engineering at South China University of Technology
+
+
+header:
+  overlay_image: /assets/images/mountains.png
+  overlay_filter: 0.25 
+  actions:
+    - label: "Learn More"
+      url : "/projects"
+      icon: "fas fa-th-list"
+      classes: "btn--primary btn--large"
+intro: 
+  - excerpt: 'We study deep learning, embodied intelligence, FPGA, and more. Our research focuses on developing innovative methodologies in these domains to advance the field of artificial intelligence.'
+    url: "/projects"
+    btn_label: "Learn More"
+    btn_class: "btn--inverse"
+feature_row:
+  - image_path: /assets/images/OD.png
+    alt: "placeholder image 1"
+    title: "Project 1"
+    excerpt: "This is some description about Project 1."
+    url: "#test-link"
+    btn_label: "Read More"
+    btn_class: "btn--inverse"
+  - image_path: /assets/images/OD.png
+    alt: "placeholder image 2"
+    title: "Project 2"
+    excerpt: "This is some description about Project 2."
+    url: "#test-link"
+    btn_label: "Read More"
+    btn_class: "btn--inverse"
+  - image_path: /assets/images/OD.png
+    title: "Project 3"
+    excerpt: "This is some description about Project 3."
+    url: "#test-link"
+    btn_label: "Read More"
+    btn_class: "btn--inverse"
+
+
+feature_row2:
+  - image_path: /assets/images/papers.jpg
+    TITLE: "OUR PUBLICATIONS"
+    excerpt: 'Discover our research contributions presented at top conferences like CVPR, NeurIPS, AAAI, and more.'
+    url: "/papers"
+    btn_label: "Papers"
+    btn_class: "btn--inverse"   
+
+feature_row3:
+  - image_path: /assets/images/i1.png
+    title: "MEET OUR TEAM!"
+    excerpt: 'Get to know the brilliant minds driving innovation and creativity in our lab. Together, we make AI smarter!'
+    url: "/members"
+    btn_label: "Members"
+    btn_class: "btn--inverse"
+
+feature_row4:
+  - image_path: /assets/images/i2.png
+    title: "LATEST NEWS"
+    excerpt: 'Stay updated for our research, awards, and fun anecdotes from the lab.'
+    url: "/news"
+    btn_label: "News"
+    btn_class: "btn--inverse"
+
+feature_row5:
+  - image_path: /assets/images/i3.png
+    title: "JOIN US!"
+    excerpt: |
+          We are looking for talented individuals to join our team.      
+          If you are passionate about AI, we would love to hear from you!
+    url: "/contact"
+    btn_label: "Contact"
+    btn_class: "btn--inverse"
+
 ---
+{% include feature_row id="intro" type="center" %}
+
+{% include feature_row %}
+
+<div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-bottom: 2rem;">
+  <video src="assets/videos/sample.mp4" controls style="width: 100%; max-width: 100%;"></video>
+</div>
+
+<div style="margin-top: 2rem;">
+  {% include feature_row id="feature_row2" type="left" %}
+</div>
+
+<div style="margin-top: 2rem;">
+  {% include feature_row id="feature_row3" type="right" %}
+</div>
+
+<div style="margin-top: 2rem;">
+  {% include feature_row id="feature_row4" type="left" %}
+</div>
+
+<div style="margin-top: 2rem;">
+  {% include feature_row id="feature_row5" type="right" %}
+</div>
+
