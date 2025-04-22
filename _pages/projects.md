@@ -3,7 +3,7 @@ title: "Projects"
 permalink: /projects/
 layout: splash
 header:
-    image: "assets/images/project.jpg"
+    image: "assets/images/project.png"
 classes: wide
 
 feature_row1:
