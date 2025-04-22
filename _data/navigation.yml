@@ -6,7 +6,5 @@ main:
     url: /papers/
   - title: "Members"
     url: /members/
-  - title: "News"
-    url: /news/
   - title: "Contact"
     url: /contact/
