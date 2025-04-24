@@ -22,24 +22,24 @@ intro:
     btn_label: "Learn More"
     btn_class: "btn--inverse"
 feature_row:
-  - image_path: /assets/images/OD.png
+  - image_path: /assets/images/projects/CL.png
     alt: "placeholder image 1"
-    title: "Project 1"
-    excerpt: "This is some description about Project 1."
-    url: "#test-link"
+    title: "Continued Learning"
+    excerpt: "Continued learning is the ongoing, self-motivated pursuit of knowledge and skills to adapt and thrive in a rapidly changing world."
+    url: "/projects"
     btn_label: "Read More"
     btn_class: "btn--inverse"
-  - image_path: /assets/images/OD.png
+  - image_path: /assets/images/projects/EI.jpg
     alt: "placeholder image 2"
-    title: "Project 2"
-    excerpt: "This is some description about Project 2."
-    url: "#test-link"
+    title: "Embodied Intelligence"
+    excerpt: "Embodied Intelligence refers to the concept that an intelligent agent's ability to perceive, learn, and act arises from its physical interaction with the environment."
+    url: "/projects"
     btn_label: "Read More"
     btn_class: "btn--inverse"
-  - image_path: /assets/images/OD.png
-    title: "Project 3"
-    excerpt: "This is some description about Project 3."
-    url: "#test-link"
+  - image_path: /assets/images/projects/LLM.png
+    title: "Large Language Models (LLMs)"
+    excerpt: "​LLMs are advanced AI systems trained on vast amounts of text data to understand and generate human-like language, enabling tasks such as answering questions, writing essays, and translating languages. ​"
+    url: "/projects"
     btn_label: "Read More"
     btn_class: "btn--inverse"
 
@@ -53,7 +53,7 @@ feature_row2:
     btn_class: "btn--inverse"   
 
 feature_row3:
-  - image_path: /assets/images/i1.png
+  - image_path: /assets/images/group.jpg
     title: "MEET OUR TEAM!"
     excerpt: 'Get to know the brilliant minds driving innovation and creativity in our lab. Together, we make AI smarter!'
     url: "/members"
@@ -61,7 +61,7 @@ feature_row3:
     btn_class: "btn--inverse"
 
 feature_row4:
-  - image_path: /assets/images/i3.png
+  - image_path: /assets/images/contact.jpg
     title: "JOIN US!"
     excerpt: |
           We are looking for talented individuals to join our team.      
@@ -70,34 +70,16 @@ feature_row4:
     btn_label: "Contact"
     btn_class: "btn--inverse"
 ---
-<!-- feature_row4:
-  - image_path: /assets/images/i2.png
-    title: "LATEST NEWS"
-    excerpt: 'Stay updated for our research, awards, and fun anecdotes from the lab.'
-    url: "/news"
-    btn_label: "News"
-    btn_class: "btn--inverse" -->
+
 {% include feature_row id="intro" type="center" %}
 
 {% include feature_row %}
 
-<div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-bottom: 2rem;">
-  <video src="assets/videos/sample.mp4" controls style="width: 100%; max-width: 100%;"></video>
-</div>
+{% include feature_row id="feature_row2" type="left" %}
 
-<div style="margin-top: 2rem;">
-  {% include feature_row id="feature_row2" type="left" %}
-</div>
+{% include feature_row id="feature_row3" type="right" %}
 
-<div style="margin-top: 2rem;">
-  {% include feature_row id="feature_row3" type="right" %}
-</div>
+{% include feature_row id="feature_row4" type="left" %}
 
-<div style="margin-top: 2rem;">
-  {% include feature_row id="feature_row4" type="left" %}
-</div>
 
-<!-- <div style="margin-top: 2rem;">
-  {% include feature_row id="feature_row5" type="right" %}
-</div> -->
 
