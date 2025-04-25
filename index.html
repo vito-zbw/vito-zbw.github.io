@@ -26,12 +26,17 @@ news:
   - title: "Open Postdoc position"
     excerpt: "We are looking for a postdoc to join our group. Projects will be in the larger field of Theoretical Biophysics, with a focus on Biomolecular Condensates. We have some specific offers within our recently acquired ERC grant, but there is also the possibility to shape research in other directions. The application deadline is April 1, 2025."
     date: "Feb 28, 2025"
+    url: "/news1"
+
   - title: "Review on the \"Physics of droplet regulation in biological cells\""
     excerpt: "We wrote a review on the physics of condensates in cells. In particular, we focus on physical processes that allow cells to regulate condensates, given that the environment is much more complex compared to typical droplets studied in soft matter physics."
     date: "Jan 24, 2025"
+    url: "/news2"
+
   - title: "New paper on the \"Physics of droplet regulation in biological cells\""
     excerpt: "We wrote a review on the physics of condensates in cells. In particular, we focus on physical processes that allow cells to regulate condensates, given that the environment is much more complex compared to typical droplets studied in soft matter physics."
     date: "Jan 24, 2025"
+    url: "/news3"
 
 feature_row:
   - image_path: /assets/images/projects/CL.png
@@ -91,7 +96,13 @@ feature_row4:
     {% for item in page.news %}
       {% if item.show_title != true %}
         <div class="news-item">
-          <h3>{{ item.title }}</h3>
+          <h3>
+            {% if item.url %}
+            <a href="{{ item.url }}" class="news-title-link">{{ item.title }}</a>
+            {% else %}
+             {{ item.title }}
+            {% endif %}
+          </h3>
           <p>{{ item.excerpt }}</p>
           {% if item.date %}
             <p class="news-date">{{ item.date }}</p>
