@@ -1,6 +1,5 @@
 ---
-layout: posts
-entries_layout: grid
+layout: splash
 classes: wide
 title: "MIAA LAB"
 excerpt: |
@@ -17,69 +16,150 @@ header:
       icon: "fas fa-th-list"
       classes: "btn--primary btn--large"
 intro: 
-  - excerpt: 'We study deep learning, embodied intelligence, FPGA, and more. Our research focuses on developing innovative methodologies in these domains to advance the field of artificial intelligence.'
+  - excerpt: 'We study continued learning, embodied intelligence, LLMs, and more. Our research focuses on developing innovative methodologies in these domains to advance the field of artificial intelligence.'
     url: "/projects"
     btn_label: "Learn More"
     btn_class: "btn--inverse"
+news:
+  - title: "Latest News"
+    show_title: true
+  - title: "Open Postdoc position"
+    excerpt: "We are looking for a postdoc to join our group. Projects will be in the larger field of Theoretical Biophysics, with a focus on Biomolecular Condensates. We have some specific offers within our recently acquired ERC grant, but there is also the possibility to shape research in other directions. The application deadline is April 1, 2025."
+    date: "Feb 28, 2025"
+  - title: "Review on the \"Physics of droplet regulation in biological cells\""
+    excerpt: "We wrote a review on the physics of condensates in cells. In particular, we focus on physical processes that allow cells to regulate condensates, given that the environment is much more complex compared to typical droplets studied in soft matter physics."
+    date: "Jan 24, 2025"
+  - title: "New paper on the \"Physics of droplet regulation in biological cells\""
+    excerpt: "We wrote a review on the physics of condensates in cells. In particular, we focus on physical processes that allow cells to regulate condensates, given that the environment is much more complex compared to typical droplets studied in soft matter physics."
+    date: "Jan 24, 2025"
+
 feature_row:
   - image_path: /assets/images/projects/CL.png
     alt: "placeholder image 1"
     title: "Continued Learning"
     excerpt: "Continued learning is the ongoing, self-motivated pursuit of knowledge and skills to adapt and thrive in a rapidly changing world."
-    url: "/projects"
-    btn_label: "Read More"
-    btn_class: "btn--inverse"
-  - image_path: /assets/images/projects/EI.jpg
+
+  - image_path: /assets/images/EI.jpg
     alt: "placeholder image 2"
     title: "Embodied Intelligence"
     excerpt: "Embodied Intelligence refers to the concept that an intelligent agent's ability to perceive, learn, and act arises from its physical interaction with the environment."
-    url: "/projects"
-    btn_label: "Read More"
-    btn_class: "btn--inverse"
+
   - image_path: /assets/images/projects/LLM.png
     title: "Large Language Models (LLMs)"
     excerpt: "​LLMs are advanced AI systems trained on vast amounts of text data to understand and generate human-like language, enabling tasks such as answering questions, writing essays, and translating languages. ​"
-    url: "/projects"
-    btn_label: "Read More"
-    btn_class: "btn--inverse"
+
 
 
 feature_row2:
-  - image_path: /assets/images/papers.jpg
+  - image_path: /assets/images/home/paper.jpg
     title: "OUR PUBLICATIONS"
-    excerpt: 'Discover our research contributions presented at top conferences like CVPR, NeurIPS, AAAI, and more.'
+    excerpt: 'Discover our research contributions presented at top conferences.'
     url: "/papers"
     btn_label: "Papers"
     btn_class: "btn--inverse"   
 
 feature_row3:
-  - image_path: /assets/images/group.jpg
-    title: "MEET OUR TEAM!"
-    excerpt: 'Get to know the brilliant minds driving innovation and creativity in our lab. Together, we make AI smarter!'
+  - image_path: /assets/images/home/people.jpg
+    title: "MEET OUR TEAM"
+    excerpt: 'Get to know the brilliant minds driving innovation and creativity in our lab.'
     url: "/members"
     btn_label: "Members"
     btn_class: "btn--inverse"
 
 feature_row4:
-  - image_path: /assets/images/contact.jpg
+  - image_path: /assets/images/home/cup.jpg
     title: "JOIN US!"
     excerpt: |
-          We are looking for talented individuals to join our team.      
-          If you are passionate about AI, we would love to hear from you!
+          We are always looking for talented individuals to join our team!      
+          
     url: "/contact"
     btn_label: "Contact"
     btn_class: "btn--inverse"
 ---
 
-{% include feature_row id="intro" type="center" %}
+<div class="main-content-container">
+  <div class="content-column">
+    {% include feature_row id="intro" type="center" %}
+    {% include feature_row %}
+    {% include feature_row id="feature_row2" type="left" %}
+    {% include feature_row id="feature_row3" type="right" %}
+    {% include feature_row id="feature_row4" type="left" %}
+  </div>
+  
+  <div class="news-column">
+    <h2>Latest News</h2>
+    {% for item in page.news %}
+      {% if item.show_title != true %}
+        <div class="news-item">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.excerpt }}</p>
+          {% if item.date %}
+            <p class="news-date">{{ item.date }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+    <div class="news-more">
+      <a href="/news" class="btn btn--inverse">More</a>
+    </div>
+  </div>
+</div>
 
-{% include feature_row %}
-
-{% include feature_row id="feature_row2" type="left" %}
-
-{% include feature_row id="feature_row3" type="right" %}
-
-{% include feature_row id="feature_row4" type="left" %}
+<style>
+  .main-content-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .content-column {
+    flex: 3;
+    min-width: 60%;
+    padding-right: 2em;
+  }
+  
+  .news-column {
+    flex: 1;
+    min-width: 25%;
+    padding: 0 0 0 1em;
+    border-left: 1px solid #ddd;
+  }
+  
+  .news-item {
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .news-item h3 {
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .news-date {
+    color: #767676;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .main-content-container {
+      flex-direction: column;
+    }
+    
+    .content-column, .news-column {
+      width: 100%;
+      min-width: 100%;
+      padding: 0;
+    }
+    
+    .news-column {
+      border-left: none;
+      margin-top: 2em;
+      padding-top: 2em;
+      border-top: 1px solid #ddd;
+    }
+  }
+</style>
 
 
 

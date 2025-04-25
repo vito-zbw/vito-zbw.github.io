@@ -2,6 +2,8 @@
 main:
   - title: "Projects"
     url: /projects/
+  - title: "News"
+    url: /news/ 
   - title: "Papers"
     url: /papers/
   - title: "Members"
