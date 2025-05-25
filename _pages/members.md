@@ -1,8 +1,7 @@
 ---
 permalink: /members/
 layout: collection
-header:
-    image: "assets/images/group.jpg"
+
 classes: wide
 
 ---
@@ -32,7 +31,9 @@ classes: wide
 }
 </style>
 
-# Professor
+# Members
+
+## Advisor
 <div class="member-grid">
   <div>
     <img src="/assets/images/640.png" alt="Professor Huiping Zhuang">
@@ -41,19 +42,19 @@ classes: wide
   </div>
 </div>
 
-# Ph.D.
+## PhD Student
 <div class="member-grid">
   <div>
-    <img src="/assets/images/640.png" alt="Ph.D. Student 1">
-    <div class="member-name">Ph.D. Student 1</div>
+    <img src="/assets/images/640.png" alt="PhD Student 1">
+    <div class="member-name">PhD Student 1</div>
   </div>
   <div>
-    <img src="/assets/images/640.png" alt="Ph.D. Student 2">
-    <div class="member-name">Ph.D. Student 2</div>
+    <img src="/assets/images/640.png" alt="PhD Student 2">
+    <div class="member-name">PhD Student 2</div>
   </div>
 </div>
 
-# Master
+## Master Student
 <div class="member-grid">
   <div>
     <img src="/assets/images/640.png" alt="Master Student 1">
@@ -69,7 +70,7 @@ classes: wide
   </div>
 </div>
 
-# Undergraduate
+## Undergraduate
 <div class="member-grid">
   <div>
     <img src="/assets/images/640.png" alt="Undergraduate Student 1">
@@ -110,5 +111,36 @@ classes: wide
   <div>
     <img src="/assets/images/640.png" alt="Undergraduate Student 10">
     <div class="member-name">Undergraduate Student 10</div>
+  </div>
+</div>
+
+## Visiting Student
+<div class="member-grid">
+  <div>
+    <img src="/assets/images/640.png" alt="Visiting Student 1">
+    <div class="member-name">Visiting Student 1</div>
+  </div>
+  <div>
+    <img src="/assets/images/640.png" alt="Visiting Student 2">
+    <div class="member-name">Visiting Student 2</div>
+  </div>
+</div>
+
+##   Graduated Student
+<div class="member-grid">
+  <div>
+    <img src="/assets/images/640.png" alt="Graduated Student 1">
+    <div class="member-name">Graduated Student 1</div>
+    <div class="member-role">Current Position</div>
+  </div>
+  <div>
+    <img src="/assets/images/640.png" alt="Graduated Student 2">
+    <div class="member-name">Graduated Student 2</div>
+    <div class="member-role">Current Position</div>
+  </div>
+  <div>
+    <img src="/assets/images/640.png" alt="Graduated Student 3">
+    <div class="member-name">Graduated Student 3</div>
+    <div class="member-role">Current Position</div>
   </div>
 </div>

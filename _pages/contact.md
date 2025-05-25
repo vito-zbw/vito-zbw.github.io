@@ -3,8 +3,6 @@ title: "Join Us"
 permalink: /contact/
 layout:  single
 author_profile: true
-header:
-  image: /assets/images/contact.jpg
 ---
 
 *Our group is recruiting master and PhD students as well as postdoc. If you are interested, please let me know.*

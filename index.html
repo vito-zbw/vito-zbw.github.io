@@ -12,14 +12,12 @@ header:
   overlay_filter: 0.25 
   actions:
     - label: "Learn More"
-      url : "/projects"
+      url : "/research"
       icon: "fas fa-th-list"
       classes: "btn--primary btn--large"
 intro: 
   - excerpt: 'We study continued learning, embodied intelligence, LLMs, and more. Our research focuses on developing innovative methodologies in these domains to advance the field of artificial intelligence.'
-    url: "/projects"
-    btn_label: "Learn More"
-    btn_class: "btn--inverse"
+
 news:
   - title: "Latest News"
     show_title: true
@@ -42,25 +40,30 @@ feature_row:
   - image_path: /assets/images/projects/CL.png
     alt: "placeholder image 1"
     title: "Continued Learning"
-    excerpt: "Continued learning is the ongoing, self-motivated pursuit of knowledge and skills to adapt and thrive in a rapidly changing world."
+    url: "/research#continued-learning-details"
+    btn_label: "Learn More"
+    btn_class: "btn--inverse"   
 
   - image_path: /assets/images/EI.jpg
     alt: "placeholder image 2"
     title: "Embodied Intelligence"
-    excerpt: "Embodied Intelligence refers to the concept that an intelligent agent's ability to perceive, learn, and act arises from its physical interaction with the environment."
+    url: "/research#embodied-intelligence-details"
+    btn_label: "Learn More"
+    btn_class: "btn--inverse" 
 
   - image_path: /assets/images/projects/LLM.png
-    title: "Large Language Models (LLMs)"
-    excerpt: "​LLMs are advanced AI systems trained on vast amounts of text data to understand and generate human-like language, enabling tasks such as answering questions, writing essays, and translating languages. ​"
-
+    title: "Large Language Models"
+    url: "/research#large-language-models-details"
+    btn_label: "Learn More"
+    btn_class: "btn--inverse" 
 
 
 feature_row2:
   - image_path: /assets/images/home/paper.jpg
     title: "OUR PUBLICATIONS"
     excerpt: 'Discover our research contributions presented at top conferences.'
-    url: "/papers"
-    btn_label: "Papers"
+    url: "/publications"
+    btn_label: "Publications"
     btn_class: "btn--inverse"   
 
 feature_row3:
@@ -86,88 +89,109 @@ feature_row4:
   <div class="content-column">
     {% include feature_row id="intro" type="center" %}
     {% include feature_row %}
+    
+    <div class="news-section">
+      <h2>Latest News</h2>
+      <ul class="news-list">
+        {% for item in page.news %}
+          {% if item.show_title != true %}
+            <li class="news-item">
+              <span class="news-date">{{ item.date }}</span>
+              {% if item.url %}
+                <a href="{{ item.url }}" class="news-title">{{ item.title }}</a>
+              {% else %}
+                <span class="news-title">{{ item.title }}</span>
+              {% endif %}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <div class="news-more">
+        <a href="/news" class="btn btn--inverse">More News</a>
+      </div>
+    </div>
+    
     {% include feature_row id="feature_row2" type="left" %}
     {% include feature_row id="feature_row3" type="right" %}
     {% include feature_row id="feature_row4" type="left" %}
-  </div>
-  
-  <div class="news-column">
-    <h2>Latest News</h2>
-    {% for item in page.news %}
-      {% if item.show_title != true %}
-        <div class="news-item">
-          <h3>
-            {% if item.url %}
-            <a href="{{ item.url }}" class="news-title-link">{{ item.title }}</a>
-            {% else %}
-             {{ item.title }}
-            {% endif %}
-          </h3>
-          <p>{{ item.excerpt }}</p>
-          {% if item.date %}
-            <p class="news-date">{{ item.date }}</p>
-          {% endif %}
-        </div>
-      {% endif %}
-    {% endfor %}
-    <div class="news-more">
-      <a href="/news" class="btn btn--inverse">More</a>
-    </div>
   </div>
 </div>
 
 <style>
   .main-content-container {
     display: flex;
-    flex-wrap: wrap;
   }
   
   .content-column {
-    flex: 3;
-    min-width: 60%;
-    padding-right: 2em;
+    width: 100%;
   }
   
-  .news-column {
-    flex: 1;
-    min-width: 25%;
-    padding: 0 0 0 1em;
-    border-left: 1px solid #ddd;
+  /* Add uniform image styling */
+  .feature__item .archive__item-teaser {
+    height: 250px; /* Set uniform height */
+    overflow: hidden;
+    position: relative;
   }
   
-  .news-item {
+  .feature__item .archive__item-teaser img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio while filling container */
+    object-position: center; /* Center the image */
+  }
+  
+  /* Ensure consistent spacing around feature items */
+  .feature__item {
     margin-bottom: 2em;
-    padding-bottom: 1em;
+  }
+  
+  .feature__item .archive__item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .news-section {
+    margin: 2em 0 3em 0;
+    padding: 1em 0;
+    border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
   }
   
-  .news-item h3 {
-    margin-bottom: 0.5em;
-    font-size: 1.1em;
+  .news-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 1.5em;
+  }
+  
+  .news-item {
+    display: flex;
+    margin-bottom: 0.75em;
+    align-items: baseline;
   }
   
   .news-date {
+    min-width: 100px;
     color: #767676;
     font-size: 0.9em;
-    margin-top: 0.5em;
+    margin-right: 1em;
+  }
+  
+  .news-title {
+    font-weight: 500;
+  }
+  
+  .news-more {
+    text-align: right;
   }
   
   @media screen and (max-width: 768px) {
-    .main-content-container {
+    .news-item {
       flex-direction: column;
     }
     
-    .content-column, .news-column {
-      width: 100%;
-      min-width: 100%;
-      padding: 0;
-    }
-    
-    .news-column {
-      border-left: none;
-      margin-top: 2em;
-      padding-top: 2em;
-      border-top: 1px solid #ddd;
+    .news-date {
+      margin-bottom: 0.25em;
     }
   }
 </style>
