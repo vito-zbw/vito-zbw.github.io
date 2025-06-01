@@ -40,20 +40,20 @@ feature_row:
   - image_path: /assets/images/projects/CL.png
     alt: "placeholder image 1"
     title: "Continued Learning"
-    url: "/research#continued-learning-details"
+    url: "/research/continued-learning"
     btn_label: "Learn More"
     btn_class: "btn--inverse"   
 
   - image_path: /assets/images/EI.jpg
     alt: "placeholder image 2"
     title: "Embodied Intelligence"
-    url: "/research#embodied-intelligence-details"
+    url: "/research/embodied-intelligence"
     btn_label: "Learn More"
     btn_class: "btn--inverse" 
 
   - image_path: /assets/images/projects/LLM.png
     title: "Large Language Models"
-    url: "/research#large-language-models-details"
+    url: "/research/large-language-models"
     btn_label: "Learn More"
     btn_class: "btn--inverse" 
 
@@ -88,10 +88,9 @@ feature_row4:
 <div class="main-content-container">
   <div class="content-column">
     {% include feature_row id="intro" type="center" %}
-    {% include feature_row %}
     
+    <h2 class="section-heading text-center">Latest News</h2>
     <div class="news-section">
-      <h2>Latest News</h2>
       <ul class="news-list">
         {% for item in page.news %}
           {% if item.show_title != true %}
@@ -110,6 +109,9 @@ feature_row4:
         <a href="/news" class="btn btn--inverse">More News</a>
       </div>
     </div>
+    
+    <h2 class="section-heading text-center">Our Research</h2>
+    {% include feature_row %}
     
     {% include feature_row id="feature_row2" type="left" %}
     {% include feature_row id="feature_row3" type="right" %}
@@ -183,6 +185,14 @@ feature_row4:
   
   .news-more {
     text-align: right;
+  }
+  
+  .section-heading {
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
   }
   
   @media screen and (max-width: 768px) {
